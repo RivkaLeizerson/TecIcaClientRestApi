@@ -54,7 +54,11 @@ public class Program
 		app.UseEndpoints(endpoints =>
 		{
 			endpoints.MapRazorPages();
-			endpoints.MapGet("/", async context => { context.Response.Redirect("/Readme"); });
+			endpoints.MapGet("/", context =>
+			{
+				context.Response.Redirect("/Readme");
+				return Task.CompletedTask;
+			});
 		});
 
 		app.MapRazorPages();

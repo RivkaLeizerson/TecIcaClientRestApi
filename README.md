@@ -82,7 +82,3 @@ curl -X GET https://yourdomain.com/IcaTecClient/GetApis
 ## Contact
 
 For further assistance or to report issues, please contact the API support team at [avi.zadok@intel.com](mailto:avi.zadok@intel.com).
-
----
-
-Note: Replace `yourdomain.com` with your actual domain where the API is hosted. This README assumes a certain level of familiarity with making HTTP requests and using APIs. Adjust the content according to the target audience's expertise level.

@@ -11,4 +11,10 @@
     <PackageReference Include="Markdig" Version="0.33.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Documentation\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

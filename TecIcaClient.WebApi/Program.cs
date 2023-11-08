@@ -50,6 +50,13 @@ public class Program
 
 		app.UseAuthorization();
 		app.MapControllers();
+
+		app.UseEndpoints(endpoints =>
+		{
+			endpoints.MapRazorPages();
+			endpoints.MapGet("/", async context => { context.Response.Redirect("/Readme"); });
+		});
+
 		app.MapRazorPages();
 
 		app.Run();

@@ -1,0 +1,2177 @@
+{
+  "ConsumerScheme": {
+    "AllowedCommands": [
+      {
+        "Name": "Thunderbolt Rundown",
+        "CommandJsonSchema": {
+          "oneOf": [
+            {
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false
+            }
+          ]
+        },
+        "ResponseJsonSchema": {
+          "oneOf": [
+            {
+              "version": {
+                "major": 2,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "RandomString": {
+                  "description": "A randomly generated string used in the command response",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "RandomString"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "AllowedEvents": [
+      {
+        "Name": "No DCH Driver",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "TEC Service requires the DCH Thunderbolt driver to be installed to work properly",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "DriverType": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "DriverType",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "Node Error PCI",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "An error has been detected on a Thunderbolt device",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "ErrorNodeLocationInfo": {
+                  "type": "string"
+                },
+                "ErrorNodeName": {
+                  "type": "string"
+                },
+                "ErrorMessage": {
+                  "type": "string"
+                },
+                "Device": {
+                  "type": "object",
+                  "properties": {
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "ControllerId": {
+                      "type": "string"
+                    },
+                    "DeviceRouterInstancePath": {
+                      "type": "string"
+                    },
+                    "DomainID": {
+                      "type": "string"
+                    },
+                    "ModelName": {
+                      "type": "string"
+                    },
+                    "VendorName": {
+                      "type": "string"
+                    },
+                    "ModelId": {
+                      "type": "string"
+                    },
+                    "VendorId": {
+                      "type": "string"
+                    },
+                    "RidgeType": {
+                      "type": "string"
+                    },
+                    "TopologyId": {
+                      "type": "object",
+                      "properties": {
+                        "_routeString": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "_routeString"
+                      ]
+                    },
+                    "InstancePath": {
+                      "type": "string"
+                    },
+                    "PowerState": {
+                      "type": "string"
+                    },
+                    "StatusCode": {
+                      "type": "string"
+                    },
+                    "FirmwareVersion": {
+                      "type": "string"
+                    },
+                    "ThunderboltParentUUID": {
+                      "type": "string"
+                    },
+                    "ControllerPort": {
+                      "type": "string"
+                    },
+                    "PortInfo": {
+                      "type": "object",
+                      "properties": {
+                        "LinkInfo": {
+                          "type": "object",
+                          "properties": {
+                            "CurrentLinkSpeed": {
+                              "type": "string"
+                            },
+                            "SupportedLinkSpeeds": {
+                              "type": "string"
+                            },
+                            "SupportedLinkWidths": {
+                              "type": "string"
+                            },
+                            "TargetLinkSpeed": {
+                              "type": "string"
+                            },
+                            "TargetLinkWidth": {
+                              "type": "string"
+                            },
+                            "NegotiatedLinkWidth": {
+                              "type": "string"
+                            },
+                            "LinkCLxSupport": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "CurrentLinkSpeed",
+                            "SupportedLinkSpeeds",
+                            "SupportedLinkWidths",
+                            "TargetLinkSpeed",
+                            "TargetLinkWidth",
+                            "NegotiatedLinkWidth",
+                            "LinkCLxSupport"
+                          ]
+                        },
+                        "LaneBonded": {
+                          "type": "string"
+                        },
+                        "Tbt3CompatibleMode": {
+                          "type": "string"
+                        },
+                        "CableSupportedUsb4Version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "LinkInfo",
+                        "LaneBonded",
+                        "Tbt3CompatibleMode",
+                        "CableSupportedUsb4Version"
+                      ]
+                    },
+                    "CableInfo": {
+                      "type": "object",
+                      "properties": {
+                        "CableType": {
+                          "type": "string"
+                        },
+                        "CableOrientation": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "CableType",
+                        "CableOrientation"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "UUID",
+                    "ControllerId",
+                    "DeviceRouterInstancePath",
+                    "DomainID",
+                    "ModelName",
+                    "VendorName",
+                    "ModelId",
+                    "VendorId",
+                    "RidgeType",
+                    "TopologyId",
+                    "InstancePath",
+                    "PowerState",
+                    "StatusCode",
+                    "FirmwareVersion",
+                    "ThunderboltParentUUID",
+                    "ControllerPort",
+                    "PortInfo",
+                    "CableInfo"
+                  ]
+                },
+                "DriverType": {
+                  "type": "string"
+                },
+                "DeviceTopologyID": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ErrorNodeLocationInfo",
+                "ErrorNodeName",
+                "ErrorMessage",
+                "Device",
+                "DriverType",
+                "DeviceTopologyID",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "Node Error USB",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "An error has been detected on a USB device",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "ErrorNodeName": {
+                  "type": "string"
+                },
+                "ErrorMessage": {
+                  "type": "string"
+                },
+                "USBHostControllerInstanceName": {
+                  "type": "string"
+                },
+                "LocationInfo": {
+                  "type": "string"
+                },
+                "InstancePath": {
+                  "type": "string"
+                },
+                "ConnectionStatus": {
+                  "type": "string"
+                },
+                "VendorId": {
+                  "type": "string"
+                },
+                "ProductId": {
+                  "type": "string"
+                },
+                "Version": {
+                  "type": "string"
+                },
+                "MaxSpeed": {
+                  "type": "string"
+                },
+                "Driver": {
+                  "type": "string"
+                },
+                "USBClass": {
+                  "type": "string"
+                },
+                "Status": {
+                  "type": "string"
+                },
+                "PowerState": {
+                  "type": "string"
+                },
+                "IsHub": {
+                  "type": "string"
+                },
+                "DeviceName": {
+                  "type": "string"
+                },
+                "USBThunderboltParentUUID": {
+                  "type": "string"
+                },
+                "ThunderboltControllerPort": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ErrorNodeName",
+                "ErrorMessage",
+                "USBHostControllerInstanceName",
+                "LocationInfo",
+                "InstancePath",
+                "ConnectionStatus",
+                "VendorId",
+                "ProductId",
+                "Version",
+                "MaxSpeed",
+                "Driver",
+                "USBClass",
+                "Status",
+                "PowerState",
+                "IsHub",
+                "DeviceName",
+                "USBThunderboltParentUUID",
+                "ThunderboltControllerPort",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "No Driver",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "TEC Service requires the Thunderbolt driver to be installed to function properly",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "DriverType": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "DriverType",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "TBT Connect To Device",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "A Thunderbolt device has been connected to a Thunderbolt device",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Device": {
+                  "type": "object",
+                  "properties": {
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "ControllerId": {
+                      "type": "string"
+                    },
+                    "DeviceRouterInstancePath": {
+                      "type": "string"
+                    },
+                    "DomainID": {
+                      "type": "string"
+                    },
+                    "ModelName": {
+                      "type": "string"
+                    },
+                    "VendorName": {
+                      "type": "string"
+                    },
+                    "ModelId": {
+                      "type": "string"
+                    },
+                    "VendorId": {
+                      "type": "string"
+                    },
+                    "RidgeType": {
+                      "type": "string"
+                    },
+                    "TopologyId": {
+                      "type": "object",
+                      "properties": {
+                        "_routeString": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "_routeString"
+                      ]
+                    },
+                    "InstancePath": {
+                      "type": "string"
+                    },
+                    "PowerState": {
+                      "type": "string"
+                    },
+                    "StatusCode": {
+                      "type": "string"
+                    },
+                    "FirmwareVersion": {
+                      "type": "string"
+                    },
+                    "ThunderboltParentUUID": {
+                      "type": "string"
+                    },
+                    "ControllerPort": {
+                      "type": "string"
+                    },
+                    "PortInfo": {
+                      "type": "object",
+                      "properties": {
+                        "LinkInfo": {
+                          "type": "object",
+                          "properties": {
+                            "CurrentLinkSpeed": {
+                              "type": "string"
+                            },
+                            "SupportedLinkSpeeds": {
+                              "type": "string"
+                            },
+                            "SupportedLinkWidths": {
+                              "type": "string"
+                            },
+                            "TargetLinkSpeed": {
+                              "type": "string"
+                            },
+                            "TargetLinkWidth": {
+                              "type": "string"
+                            },
+                            "NegotiatedLinkWidth": {
+                              "type": "string"
+                            },
+                            "LinkCLxSupport": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "CurrentLinkSpeed",
+                            "SupportedLinkSpeeds",
+                            "SupportedLinkWidths",
+                            "TargetLinkSpeed",
+                            "TargetLinkWidth",
+                            "NegotiatedLinkWidth",
+                            "LinkCLxSupport"
+                          ]
+                        },
+                        "LaneBonded": {
+                          "type": "string"
+                        },
+                        "Tbt3CompatibleMode": {
+                          "type": "string"
+                        },
+                        "CableSupportedUsb4Version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "LinkInfo",
+                        "LaneBonded",
+                        "Tbt3CompatibleMode",
+                        "CableSupportedUsb4Version"
+                      ]
+                    },
+                    "CableInfo": {
+                      "type": "object",
+                      "properties": {
+                        "CableType": {
+                          "type": "string"
+                        },
+                        "CableOrientation": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "CableType",
+                        "CableOrientation"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "UUID",
+                    "ControllerId",
+                    "DeviceRouterInstancePath",
+                    "DomainID",
+                    "ModelName",
+                    "VendorName",
+                    "ModelId",
+                    "VendorId",
+                    "RidgeType",
+                    "TopologyId",
+                    "InstancePath",
+                    "PowerState",
+                    "StatusCode",
+                    "FirmwareVersion",
+                    "ThunderboltParentUUID",
+                    "ControllerPort",
+                    "PortInfo",
+                    "CableInfo"
+                  ]
+                },
+                "DriverType": {
+                  "type": "string"
+                },
+                "DeviceTopologyID": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Device",
+                "DriverType",
+                "DeviceTopologyID",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "TBT Disconnect From Device",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "A Thunderbolt device has been disconnected from a Thunderbolt device",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Device": {
+                  "type": "object",
+                  "properties": {
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "ControllerId": {
+                      "type": "string"
+                    },
+                    "DeviceRouterInstancePath": {
+                      "type": "string"
+                    },
+                    "DomainID": {
+                      "type": "string"
+                    },
+                    "ModelName": {
+                      "type": "string"
+                    },
+                    "VendorName": {
+                      "type": "string"
+                    },
+                    "ModelId": {
+                      "type": "string"
+                    },
+                    "VendorId": {
+                      "type": "string"
+                    },
+                    "RidgeType": {
+                      "type": "string"
+                    },
+                    "TopologyId": {
+                      "type": "object",
+                      "properties": {
+                        "_routeString": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "_routeString"
+                      ]
+                    },
+                    "InstancePath": {
+                      "type": "string"
+                    },
+                    "PowerState": {
+                      "type": "string"
+                    },
+                    "StatusCode": {
+                      "type": "string"
+                    },
+                    "FirmwareVersion": {
+                      "type": "string"
+                    },
+                    "ThunderboltParentUUID": {
+                      "type": "string"
+                    },
+                    "ControllerPort": {
+                      "type": "string"
+                    },
+                    "PortInfo": {
+                      "type": "object",
+                      "properties": {
+                        "LinkInfo": {
+                          "type": "object",
+                          "properties": {
+                            "CurrentLinkSpeed": {
+                              "type": "string"
+                            },
+                            "SupportedLinkSpeeds": {
+                              "type": "string"
+                            },
+                            "SupportedLinkWidths": {
+                              "type": "string"
+                            },
+                            "TargetLinkSpeed": {
+                              "type": "string"
+                            },
+                            "TargetLinkWidth": {
+                              "type": "string"
+                            },
+                            "NegotiatedLinkWidth": {
+                              "type": "string"
+                            },
+                            "LinkCLxSupport": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "CurrentLinkSpeed",
+                            "SupportedLinkSpeeds",
+                            "SupportedLinkWidths",
+                            "TargetLinkSpeed",
+                            "TargetLinkWidth",
+                            "NegotiatedLinkWidth",
+                            "LinkCLxSupport"
+                          ]
+                        },
+                        "LaneBonded": {
+                          "type": "string"
+                        },
+                        "Tbt3CompatibleMode": {
+                          "type": "string"
+                        },
+                        "CableSupportedUsb4Version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "LinkInfo",
+                        "LaneBonded",
+                        "Tbt3CompatibleMode",
+                        "CableSupportedUsb4Version"
+                      ]
+                    },
+                    "CableInfo": {
+                      "type": "object",
+                      "properties": {
+                        "CableType": {
+                          "type": "string"
+                        },
+                        "CableOrientation": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "CableType",
+                        "CableOrientation"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "UUID",
+                    "ControllerId",
+                    "DeviceRouterInstancePath",
+                    "DomainID",
+                    "ModelName",
+                    "VendorName",
+                    "ModelId",
+                    "VendorId",
+                    "RidgeType",
+                    "TopologyId",
+                    "InstancePath",
+                    "PowerState",
+                    "StatusCode",
+                    "FirmwareVersion",
+                    "ThunderboltParentUUID",
+                    "ControllerPort",
+                    "PortInfo",
+                    "CableInfo"
+                  ]
+                },
+                "DriverType": {
+                  "type": "string"
+                },
+                "DeviceTopologyID": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Device",
+                "DriverType",
+                "DeviceTopologyID",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "TBT Disconnect From Host",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "A Thunderbolt device has been disconnected from a Thunderbolt port of the host",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Device": {
+                  "type": "object",
+                  "properties": {
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "ControllerId": {
+                      "type": "string"
+                    },
+                    "DeviceRouterInstancePath": {
+                      "type": "string"
+                    },
+                    "DomainID": {
+                      "type": "string"
+                    },
+                    "ModelName": {
+                      "type": "string"
+                    },
+                    "VendorName": {
+                      "type": "string"
+                    },
+                    "ModelId": {
+                      "type": "string"
+                    },
+                    "VendorId": {
+                      "type": "string"
+                    },
+                    "RidgeType": {
+                      "type": "string"
+                    },
+                    "TopologyId": {
+                      "type": "object",
+                      "properties": {
+                        "_routeString": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "_routeString"
+                      ]
+                    },
+                    "InstancePath": {
+                      "type": "string"
+                    },
+                    "PowerState": {
+                      "type": "string"
+                    },
+                    "StatusCode": {
+                      "type": "string"
+                    },
+                    "FirmwareVersion": {
+                      "type": "string"
+                    },
+                    "ThunderboltParentUUID": {
+                      "type": "string"
+                    },
+                    "ControllerPort": {
+                      "type": "string"
+                    },
+                    "PortInfo": {
+                      "type": "object",
+                      "properties": {
+                        "LinkInfo": {
+                          "type": "object",
+                          "properties": {
+                            "CurrentLinkSpeed": {
+                              "type": "string"
+                            },
+                            "SupportedLinkSpeeds": {
+                              "type": "string"
+                            },
+                            "SupportedLinkWidths": {
+                              "type": "string"
+                            },
+                            "TargetLinkSpeed": {
+                              "type": "string"
+                            },
+                            "TargetLinkWidth": {
+                              "type": "string"
+                            },
+                            "NegotiatedLinkWidth": {
+                              "type": "string"
+                            },
+                            "LinkCLxSupport": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "CurrentLinkSpeed",
+                            "SupportedLinkSpeeds",
+                            "SupportedLinkWidths",
+                            "TargetLinkSpeed",
+                            "TargetLinkWidth",
+                            "NegotiatedLinkWidth",
+                            "LinkCLxSupport"
+                          ]
+                        },
+                        "LaneBonded": {
+                          "type": "string"
+                        },
+                        "Tbt3CompatibleMode": {
+                          "type": "string"
+                        },
+                        "CableSupportedUsb4Version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "LinkInfo",
+                        "LaneBonded",
+                        "Tbt3CompatibleMode",
+                        "CableSupportedUsb4Version"
+                      ]
+                    },
+                    "CableInfo": {
+                      "type": "object",
+                      "properties": {
+                        "CableType": {
+                          "type": "string"
+                        },
+                        "CableOrientation": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "CableType",
+                        "CableOrientation"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "UUID",
+                    "ControllerId",
+                    "DeviceRouterInstancePath",
+                    "DomainID",
+                    "ModelName",
+                    "VendorName",
+                    "ModelId",
+                    "VendorId",
+                    "RidgeType",
+                    "TopologyId",
+                    "InstancePath",
+                    "PowerState",
+                    "StatusCode",
+                    "FirmwareVersion",
+                    "ThunderboltParentUUID",
+                    "ControllerPort",
+                    "PortInfo",
+                    "CableInfo"
+                  ]
+                },
+                "DriverType": {
+                  "type": "string"
+                },
+                "DeviceTopologyID": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Device",
+                "DriverType",
+                "DeviceTopologyID",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "TEC Presence",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "Thunderbolt Event Collection service started",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "USB Connect To Host",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "A USB device has been connected to a Thunderbolt port of the host",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "USBHostControllerInstanceName": {
+                  "type": "string"
+                },
+                "LocationInfo": {
+                  "type": "string"
+                },
+                "InstancePath": {
+                  "type": "string"
+                },
+                "ConnectionStatus": {
+                  "type": "string"
+                },
+                "VendorId": {
+                  "type": "string"
+                },
+                "ProductId": {
+                  "type": "string"
+                },
+                "Version": {
+                  "type": "string"
+                },
+                "MaxSpeed": {
+                  "type": "string"
+                },
+                "Driver": {
+                  "type": "string"
+                },
+                "USBClass": {
+                  "type": "string"
+                },
+                "Status": {
+                  "type": "string"
+                },
+                "PowerState": {
+                  "type": "string"
+                },
+                "IsHub": {
+                  "type": "string"
+                },
+                "DeviceName": {
+                  "type": "string"
+                },
+                "USBThunderboltParentUUID": {
+                  "type": "string"
+                },
+                "ThunderboltControllerPort": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "USBHostControllerInstanceName",
+                "LocationInfo",
+                "InstancePath",
+                "ConnectionStatus",
+                "VendorId",
+                "ProductId",
+                "Version",
+                "MaxSpeed",
+                "Driver",
+                "USBClass",
+                "Status",
+                "PowerState",
+                "IsHub",
+                "DeviceName",
+                "USBThunderboltParentUUID",
+                "ThunderboltControllerPort",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "USB Disconnect From Device",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "A USB device has been disconnected from a Thunderbolt device",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "USBHostControllerInstanceName": {
+                  "type": "string"
+                },
+                "LocationInfo": {
+                  "type": "string"
+                },
+                "InstancePath": {
+                  "type": "string"
+                },
+                "ConnectionStatus": {
+                  "type": "string"
+                },
+                "VendorId": {
+                  "type": "string"
+                },
+                "ProductId": {
+                  "type": "string"
+                },
+                "Version": {
+                  "type": "string"
+                },
+                "MaxSpeed": {
+                  "type": "string"
+                },
+                "Driver": {
+                  "type": "string"
+                },
+                "USBClass": {
+                  "type": "string"
+                },
+                "Status": {
+                  "type": "string"
+                },
+                "PowerState": {
+                  "type": "string"
+                },
+                "IsHub": {
+                  "type": "string"
+                },
+                "DeviceName": {
+                  "type": "string"
+                },
+                "USBThunderboltParentUUID": {
+                  "type": "string"
+                },
+                "ThunderboltControllerPort": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "USBHostControllerInstanceName",
+                "LocationInfo",
+                "InstancePath",
+                "ConnectionStatus",
+                "VendorId",
+                "ProductId",
+                "Version",
+                "MaxSpeed",
+                "Driver",
+                "USBClass",
+                "Status",
+                "PowerState",
+                "IsHub",
+                "DeviceName",
+                "USBThunderboltParentUUID",
+                "ThunderboltControllerPort",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "USB Disconnect From Host",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "A USB device has been disconnected from a Thunderbolt port of the host",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "USBHostControllerInstanceName": {
+                  "type": "string"
+                },
+                "LocationInfo": {
+                  "type": "string"
+                },
+                "InstancePath": {
+                  "type": "string"
+                },
+                "ConnectionStatus": {
+                  "type": "string"
+                },
+                "VendorId": {
+                  "type": "string"
+                },
+                "ProductId": {
+                  "type": "string"
+                },
+                "Version": {
+                  "type": "string"
+                },
+                "MaxSpeed": {
+                  "type": "string"
+                },
+                "Driver": {
+                  "type": "string"
+                },
+                "USBClass": {
+                  "type": "string"
+                },
+                "Status": {
+                  "type": "string"
+                },
+                "PowerState": {
+                  "type": "string"
+                },
+                "IsHub": {
+                  "type": "string"
+                },
+                "DeviceName": {
+                  "type": "string"
+                },
+                "USBThunderboltParentUUID": {
+                  "type": "string"
+                },
+                "ThunderboltControllerPort": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "USBHostControllerInstanceName",
+                "LocationInfo",
+                "InstancePath",
+                "ConnectionStatus",
+                "VendorId",
+                "ProductId",
+                "Version",
+                "MaxSpeed",
+                "Driver",
+                "USBClass",
+                "Status",
+                "PowerState",
+                "IsHub",
+                "DeviceName",
+                "USBThunderboltParentUUID",
+                "ThunderboltControllerPort",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "USB Connect To Device",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "USB Connected to Thunderbolt Device",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "USBHostControllerInstanceName": {
+                  "type": "string"
+                },
+                "LocationInfo": {
+                  "type": "string"
+                },
+                "InstancePath": {
+                  "type": "string"
+                },
+                "ConnectionStatus": {
+                  "type": "string"
+                },
+                "VendorId": {
+                  "type": "string"
+                },
+                "ProductId": {
+                  "type": "string"
+                },
+                "Version": {
+                  "type": "string"
+                },
+                "MaxSpeed": {
+                  "type": "string"
+                },
+                "Driver": {
+                  "type": "string"
+                },
+                "USBClass": {
+                  "type": "string"
+                },
+                "Status": {
+                  "type": "string"
+                },
+                "PowerState": {
+                  "type": "string"
+                },
+                "IsHub": {
+                  "type": "string"
+                },
+                "DeviceName": {
+                  "type": "string"
+                },
+                "USBThunderboltParentUUID": {
+                  "type": "string"
+                },
+                "ThunderboltControllerPort": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "USBHostControllerInstanceName",
+                "LocationInfo",
+                "InstancePath",
+                "ConnectionStatus",
+                "VendorId",
+                "ProductId",
+                "Version",
+                "MaxSpeed",
+                "Driver",
+                "USBClass",
+                "Status",
+                "PowerState",
+                "IsHub",
+                "DeviceName",
+                "USBThunderboltParentUUID",
+                "ThunderboltControllerPort",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "Name": "TBT Connect To Host",
+        "JsonSchema": {
+          "oneOf": [
+            {
+              "description": "A Thunderbolt device has been connected to a Thunderbolt port of the host",
+              "version": {
+                "major": 1,
+                "minor": 0
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Device": {
+                  "type": "object",
+                  "properties": {
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "ControllerId": {
+                      "type": "string"
+                    },
+                    "DeviceRouterInstancePath": {
+                      "type": "string"
+                    },
+                    "DomainID": {
+                      "type": "string"
+                    },
+                    "ModelName": {
+                      "type": "string"
+                    },
+                    "VendorName": {
+                      "type": "string"
+                    },
+                    "ModelId": {
+                      "type": "string"
+                    },
+                    "VendorId": {
+                      "type": "string"
+                    },
+                    "RidgeType": {
+                      "type": "string"
+                    },
+                    "TopologyId": {
+                      "type": "object",
+                      "properties": {
+                        "_routeString": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "_routeString"
+                      ]
+                    },
+                    "InstancePath": {
+                      "type": "string"
+                    },
+                    "PowerState": {
+                      "type": "string"
+                    },
+                    "StatusCode": {
+                      "type": "string"
+                    },
+                    "FirmwareVersion": {
+                      "type": "string"
+                    },
+                    "ThunderboltParentUUID": {
+                      "type": "string"
+                    },
+                    "ControllerPort": {
+                      "type": "string"
+                    },
+                    "PortInfo": {
+                      "type": "object",
+                      "properties": {
+                        "LinkInfo": {
+                          "type": "object",
+                          "properties": {
+                            "CurrentLinkSpeed": {
+                              "type": "string"
+                            },
+                            "SupportedLinkSpeeds": {
+                              "type": "string"
+                            },
+                            "SupportedLinkWidths": {
+                              "type": "string"
+                            },
+                            "TargetLinkSpeed": {
+                              "type": "string"
+                            },
+                            "TargetLinkWidth": {
+                              "type": "string"
+                            },
+                            "NegotiatedLinkWidth": {
+                              "type": "string"
+                            },
+                            "LinkCLxSupport": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "CurrentLinkSpeed",
+                            "SupportedLinkSpeeds",
+                            "SupportedLinkWidths",
+                            "TargetLinkSpeed",
+                            "TargetLinkWidth",
+                            "NegotiatedLinkWidth",
+                            "LinkCLxSupport"
+                          ]
+                        },
+                        "LaneBonded": {
+                          "type": "string"
+                        },
+                        "Tbt3CompatibleMode": {
+                          "type": "string"
+                        },
+                        "CableSupportedUsb4Version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "LinkInfo",
+                        "LaneBonded",
+                        "Tbt3CompatibleMode",
+                        "CableSupportedUsb4Version"
+                      ]
+                    },
+                    "CableInfo": {
+                      "type": "object",
+                      "properties": {
+                        "CableType": {
+                          "type": "string"
+                        },
+                        "CableOrientation": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "CableType",
+                        "CableOrientation"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "UUID",
+                    "ControllerId",
+                    "DeviceRouterInstancePath",
+                    "DomainID",
+                    "ModelName",
+                    "VendorName",
+                    "ModelId",
+                    "VendorId",
+                    "RidgeType",
+                    "TopologyId",
+                    "InstancePath",
+                    "PowerState",
+                    "StatusCode",
+                    "FirmwareVersion",
+                    "ThunderboltParentUUID",
+                    "ControllerPort",
+                    "PortInfo",
+                    "CableInfo"
+                  ]
+                },
+                "DriverType": {
+                  "type": "string"
+                },
+                "DeviceTopologyID": {
+                  "type": "string"
+                },
+                "NumControllers": {
+                  "type": "string"
+                },
+                "ThunderboltController": {
+                  "type": "string"
+                },
+                "NumThunderboltDevices": {
+                  "type": "integer"
+                },
+                "ThunderboltDevice": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "NumDisplays": {
+                  "type": "string"
+                },
+                "StatusCode": {
+                  "type": "string"
+                },
+                "IsRundownEvent": {
+                  "type": "boolean"
+                },
+                "TimeStamp": {
+                  "type": "string"
+                },
+                "OSName": {
+                  "type": "string"
+                },
+                "OSVersion": {
+                  "type": "string"
+                },
+                "HostModel": {
+                  "type": "string"
+                },
+                "BIOSVersion": {
+                  "type": "string"
+                },
+                "EventCategory": {
+                  "type": "string"
+                },
+                "EventSubcategory": {
+                  "type": "string"
+                },
+                "TecVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Device",
+                "DriverType",
+                "DeviceTopologyID",
+                "NumControllers",
+                "ThunderboltController",
+                "NumThunderboltDevices",
+                "ThunderboltDevice",
+                "NumDisplays",
+                "StatusCode",
+                "IsRundownEvent",
+                "TimeStamp",
+                "OSName",
+                "OSVersion",
+                "HostModel",
+                "BIOSVersion",
+                "EventCategory",
+                "EventSubcategory",
+                "TecVersion"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "ExpirationDate": "2024-02-08T00:00:00",
+    "ConsumerCertDetails": {
+      "SerialNumber": "33000002528B33AAF895F339DB000000000252",
+      "Issuer": "CN=Microsoft Code Signing PCA 2011, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "PublicKey": "MIIBCgKCAQEA0OTPj7P1\\u002BwTbr\\u002BQf9COrqA8I9DSTqNSq1UKju4IEV3HJJck61i\\u002BMTEoYyKLtiLG\r\n2Jxeu8F81QKuTpuKHvi380gzs43G\\u002BprNNIAaNDkGqsENQYo8iezbw3/NCNX1vTi\\u002B\\u002BirdFqXNs6xoc3B3W\\u002B7qT678b0jTV\r\nL8St7IMO2E7d9eNdL6RKfMnwRJf4XfGcwL\\u002BOwwoCeY9c5tvebNUVWRzaejKIkBVThApuAMCtpdvIvmBEdSTuCKZUx\\u002BOLr81/aEZyR2j\r\nL1s2RKaMz8uIzTtgw6m3DbOM4ewFjIRNT1hVQPghyPxJ\\u002BZwErwry5rkf7fKuG3PF0fECGSUEqftlOptpXTQIDAQAB"
+    },
+    "KeyId": "8b9aab3a-5c0a-4972-809a-7f44fd9cd959",
+    "ConsumerId": "13104893-fd8d-429b-826a-381870748dff",
+    "ValidateSchema": false,
+    "Name": "tec_rest_client"
+  },
+  "DigitalSignature": "4b3CRB+mK8FTxyXDw6Hfx3TlEU8Ed5dmMFrYiUCKxR42L5RmbqXhFIgTfaX72TYPS/FLMQMLYa+u031qVd9blMzvjVQmI+E8TPD4RtGqTS7ap4272jkH6qKZCA7OmHPY"
+}

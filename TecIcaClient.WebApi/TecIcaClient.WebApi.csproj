@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Intel.Telemetry.Api" Version="1.0.21" />
+    <PackageReference Include="Markdig" Version="0.33.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Documentation\" />
   </ItemGroup>
 
 </Project>

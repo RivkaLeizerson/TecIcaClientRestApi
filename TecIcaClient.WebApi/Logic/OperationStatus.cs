@@ -22,16 +22,16 @@ namespace TecIcaClient.WebApi.Logic;
 
 public class OperationStatus
 {
-    public OperationStatus(bool success, string reason, object? data = null)
-    {
-        Success = success;
-        Reason = reason;
-        Data = data;
-    }
+	public OperationStatus(bool success, string reason, object? data = null)
+	{
+		Success = success;
+		Reason = reason;
+		Data = data;
+	}
 
-    public bool Success { get; }
+	public bool Success { get; }
 
-    public string Reason { get; }
+	public string Reason { get; }
 
-    public object? Data { get; set; }
+	public object? Data { get; set; }
 }

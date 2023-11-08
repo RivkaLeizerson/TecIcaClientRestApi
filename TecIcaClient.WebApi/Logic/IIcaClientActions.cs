@@ -22,13 +22,13 @@ namespace TecIcaClient.WebApi.Logic;
 
 public interface IIcaClientActions
 {
-    Task<OperationStatus> SubscribeToEvent(string eventName);
+	Task<OperationStatus> SubscribeToEvent(int eventId);
 
-    Task<OperationStatus> UnsubscribeFromEvent(string eventName);
+	Task<OperationStatus> UnsubscribeFromEvent(int eventId);
 
-    Task<OperationStatus> SendCommand(string commandName);
+	Task<OperationStatus> SendCommand(int commandId);
 
-    Task<OperationStatus> ConnectToIca();
+	Task<OperationStatus> ConnectToIca();
 
-    OperationStatus GetSupportedApis();
+	OperationStatus GetSupportedApis();
 }

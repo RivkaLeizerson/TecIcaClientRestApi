@@ -143,24 +143,10 @@
                     "RidgeType": {
                       "type": "string"
                     },
-                    "TopologyId": {
-                      "type": "object",
-                      "properties": {
-                        "_routeString": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "_routeString"
-                      ]
-                    },
                     "InstancePath": {
                       "type": "string"
                     },
                     "PowerState": {
-                      "type": "string"
-                    },
-                    "StatusCode": {
                       "type": "string"
                     },
                     "FirmwareVersion": {
@@ -253,10 +239,8 @@
                     "ModelId",
                     "VendorId",
                     "RidgeType",
-                    "TopologyId",
                     "InstancePath",
                     "PowerState",
-                    "StatusCode",
                     "FirmwareVersion",
                     "ThunderboltParentUUID",
                     "ControllerPort",
@@ -267,7 +251,7 @@
                 "DriverType": {
                   "type": "string"
                 },
-                "DeviceTopologyID": {
+                "TopologyId": {
                   "type": "string"
                 },
                 "NumControllers": {
@@ -325,7 +309,7 @@
                 "ErrorMessage",
                 "Device",
                 "DriverType",
-                "DeviceTopologyID",
+                "TopologyId",
                 "NumControllers",
                 "ThunderboltController",
                 "NumThunderboltDevices",
@@ -596,24 +580,10 @@
                     "RidgeType": {
                       "type": "string"
                     },
-                    "TopologyId": {
-                      "type": "object",
-                      "properties": {
-                        "_routeString": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "_routeString"
-                      ]
-                    },
                     "InstancePath": {
                       "type": "string"
                     },
                     "PowerState": {
-                      "type": "string"
-                    },
-                    "StatusCode": {
                       "type": "string"
                     },
                     "FirmwareVersion": {
@@ -706,10 +676,8 @@
                     "ModelId",
                     "VendorId",
                     "RidgeType",
-                    "TopologyId",
                     "InstancePath",
                     "PowerState",
-                    "StatusCode",
                     "FirmwareVersion",
                     "ThunderboltParentUUID",
                     "ControllerPort",
@@ -720,7 +688,7 @@
                 "DriverType": {
                   "type": "string"
                 },
-                "DeviceTopologyID": {
+                "TopologyId": {
                   "type": "string"
                 },
                 "NumControllers": {
@@ -775,7 +743,7 @@
               "required": [
                 "Device",
                 "DriverType",
-                "DeviceTopologyID",
+                "TopologyId",
                 "NumControllers",
                 "ThunderboltController",
                 "NumThunderboltDevices",
@@ -839,24 +807,10 @@
                     "RidgeType": {
                       "type": "string"
                     },
-                    "TopologyId": {
-                      "type": "object",
-                      "properties": {
-                        "_routeString": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "_routeString"
-                      ]
-                    },
                     "InstancePath": {
                       "type": "string"
                     },
                     "PowerState": {
-                      "type": "string"
-                    },
-                    "StatusCode": {
                       "type": "string"
                     },
                     "FirmwareVersion": {
@@ -949,10 +903,8 @@
                     "ModelId",
                     "VendorId",
                     "RidgeType",
-                    "TopologyId",
                     "InstancePath",
                     "PowerState",
-                    "StatusCode",
                     "FirmwareVersion",
                     "ThunderboltParentUUID",
                     "ControllerPort",
@@ -963,7 +915,7 @@
                 "DriverType": {
                   "type": "string"
                 },
-                "DeviceTopologyID": {
+                "TopologyId": {
                   "type": "string"
                 },
                 "NumControllers": {
@@ -1018,7 +970,7 @@
               "required": [
                 "Device",
                 "DriverType",
-                "DeviceTopologyID",
+                "TopologyId",
                 "NumControllers",
                 "ThunderboltController",
                 "NumThunderboltDevices",
@@ -1082,24 +1034,10 @@
                     "RidgeType": {
                       "type": "string"
                     },
-                    "TopologyId": {
-                      "type": "object",
-                      "properties": {
-                        "_routeString": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "_routeString"
-                      ]
-                    },
                     "InstancePath": {
                       "type": "string"
                     },
                     "PowerState": {
-                      "type": "string"
-                    },
-                    "StatusCode": {
                       "type": "string"
                     },
                     "FirmwareVersion": {
@@ -1192,10 +1130,8 @@
                     "ModelId",
                     "VendorId",
                     "RidgeType",
-                    "TopologyId",
                     "InstancePath",
                     "PowerState",
-                    "StatusCode",
                     "FirmwareVersion",
                     "ThunderboltParentUUID",
                     "ControllerPort",
@@ -1206,7 +1142,7 @@
                 "DriverType": {
                   "type": "string"
                 },
-                "DeviceTopologyID": {
+                "TopologyId": {
                   "type": "string"
                 },
                 "NumControllers": {
@@ -1261,7 +1197,7 @@
               "required": [
                 "Device",
                 "DriverType",
-                "DeviceTopologyID",
+                "TopologyId",
                 "NumControllers",
                 "ThunderboltController",
                 "NumThunderboltDevices",
@@ -1961,24 +1897,10 @@
                     "RidgeType": {
                       "type": "string"
                     },
-                    "TopologyId": {
-                      "type": "object",
-                      "properties": {
-                        "_routeString": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "_routeString"
-                      ]
-                    },
                     "InstancePath": {
                       "type": "string"
                     },
                     "PowerState": {
-                      "type": "string"
-                    },
-                    "StatusCode": {
                       "type": "string"
                     },
                     "FirmwareVersion": {
@@ -2071,10 +1993,8 @@
                     "ModelId",
                     "VendorId",
                     "RidgeType",
-                    "TopologyId",
                     "InstancePath",
                     "PowerState",
-                    "StatusCode",
                     "FirmwareVersion",
                     "ThunderboltParentUUID",
                     "ControllerPort",
@@ -2085,7 +2005,7 @@
                 "DriverType": {
                   "type": "string"
                 },
-                "DeviceTopologyID": {
+                "TopologyId": {
                   "type": "string"
                 },
                 "NumControllers": {
@@ -2140,7 +2060,7 @@
               "required": [
                 "Device",
                 "DriverType",
-                "DeviceTopologyID",
+                "TopologyId",
                 "NumControllers",
                 "ThunderboltController",
                 "NumThunderboltDevices",
@@ -2173,5 +2093,5 @@
     "ValidateSchema": false,
     "Name": "tec_rest_client"
   },
-  "DigitalSignature": "4b3CRB+mK8FTxyXDw6Hfx3TlEU8Ed5dmMFrYiUCKxR42L5RmbqXhFIgTfaX72TYPS/FLMQMLYa+u031qVd9blMzvjVQmI+E8TPD4RtGqTS7ap4272jkH6qKZCA7OmHPY"
+  "DigitalSignature": "DVlvqE+r6rshm6P2sl+tlQaMSBXfhYdk6AtLG4Qegr5YsZPMzWMCLBGuU42iYE6/wanSNHqMNdEgH3PA5SXkErASinT0gODJMR5wdLVn28ThMxj/NnvtL+mP4HETus7V"
 }

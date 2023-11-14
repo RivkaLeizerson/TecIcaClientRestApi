@@ -18,6 +18,7 @@
 
 #endregion
 
+using Microsoft.AspNetCore.Hosting;
 using TecIcaClient.WebApi.Logic;
 
 namespace TecIcaClient.WebApi;
@@ -27,14 +28,15 @@ public class Program
 	public static void Main(string[] args)
 	{
 		var builder = WebApplication.CreateBuilder(args);
+        builder.WebHost.UseUrls("http://*:5000");
+		
 
-		// Add services to the container.
-		builder.Services.AddRazorPages();
+        // Add services to the container.
+        builder.Services.AddRazorPages();
 
 		builder.Services.AddSingleton<IIcaClientActions, IcaClientActions>();
 
 		var app = builder.Build();
-
 		// Configure the HTTP request pipeline.
 		if (!app.Environment.IsDevelopment())
 		{
@@ -65,4 +67,6 @@ public class Program
 
 		app.Run();
 	}
+
+  
 }

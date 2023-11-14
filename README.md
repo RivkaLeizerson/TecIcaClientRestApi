@@ -78,7 +78,3 @@ curl -X POST https://yourdomain.com/IcaTecClient/Connect
 # Get a list of supported APIs
 curl -X GET https://yourdomain.com/IcaTecClient/GetApis
 ```
-
-## Contact
-
-For further assistance or to report issues, please contact the API support team at [avi.zadok@intel.com](mailto:avi.zadok@intel.com).

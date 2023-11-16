@@ -172,7 +172,7 @@ public sealed class IcaClientActions : IIcaClientActions
 	{
 		var executablePath = AppDomain.CurrentDomain.BaseDirectory;
 
-		var dirName = $"{eventId}_{DateTime.Now:dd_MM_yy_HH_mm_ss}";
+		var dirName = $"{eventId}";
 
 		var fullPath = Path.Combine(executablePath, dirName);
 

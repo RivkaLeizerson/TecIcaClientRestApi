@@ -16,9 +16,13 @@ public class IcaTecClientController : ControllerBase
 	{
 		// Your subscribe logic here
 		var operationStatus = await _actions.SubscribeToEvent(eventId);
+        await Console.Out.WriteLineAsync("hi subscribe!!!!");
 
-		if (!operationStatus.Success)
-			return BadRequest($"Failed to subscribe to event {eventId}: {operationStatus.Reason}");
+        if (!operationStatus.Success)
+		{
+            Console.WriteLine($"the reason is {operationStatus.Reason}");
+            return BadRequest($"Failed to subscribe to event {eventId}: {operationStatus.Reason}");
+        }
 
 		return Ok(operationStatus);
 	}

@@ -65,11 +65,8 @@ public sealed class IcaClientActions : IIcaClientActions
 	public async Task<OperationStatus> SubscribeToEvent(int eventId)
 	{
 		if (!TecEventsDictionary.TryGetValue(eventId, out var eventName))
-		{
-			Console.WriteLine("fail in try get value");
-            await Console.Out.WriteLineAsync($"there is no support for event {eventId}");
-            return new OperationStatus(false, $"There is no support for event {eventId}");
-        }
+			return new OperationStatus(false, $"There is no support for event {eventId}");
+
 		try
 		{
 			if (_context == null) return new OperationStatus(false, THE_CLIENT_IS_NOT_CONNECTED_TO_ICA);
@@ -83,12 +80,8 @@ public sealed class IcaClientActions : IIcaClientActions
 					File.WriteAllText(Path.Combine(eventDirectory, $"{eventId}_{DateTime.Now:dd_MM_yy_HH_mm_ss}.json"),
 						json.ToJsonString(JsonSerializerOptions));
 				});
-			if (responseHeader.HasFailed)
-			{
-                await Console.Out.WriteLineAsync($"responseHeader.HasFailed {responseHeader.FailureReason}");
-            }
-            await Console.Out.WriteLineAsync("now return");
-            return responseHeader.HasFailed
+
+			return responseHeader.HasFailed
 				? new OperationStatus(false, responseHeader.FailureReason, responseHeader)
 				: new OperationStatus(true, eventDirectory, responseHeader);
 		}
@@ -179,7 +172,7 @@ public sealed class IcaClientActions : IIcaClientActions
 	{
 		var executablePath = AppDomain.CurrentDomain.BaseDirectory;
 
-		var dirName = "events";
+		var dirName = $"{eventId}";
 
 		var fullPath = Path.Combine(executablePath, dirName);
 
